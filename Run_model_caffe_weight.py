@@ -121,17 +121,6 @@ while (cap.isOpened()):
                 continue
             if crop_img.shape[0] < 0 or crop_img.shape[1] < 0:
                 continue
-            # crop_img = cv2.resize(crop_img,(48,48))/ 255
-            # kaotype_score = Kaotsukinet.predict(crop_img.reshape((1,*crop_img.shape,1)))
-            # kaotype=np.argmax(kaotype_score)
-            # if kaotype_score[0][kaotype]> (0.5):
-            #     # type_dict = {"0": "angry", "1": "fear", "2": "disgust", "3": "happy", "4": "sad", "5": "suprise",
-            #     #              "6": "neutral"}
-            #     type_dict = {"0": "angry!", "1": "fear", "2": "disgust", "3": "happy", "4": "sad", "5": "suprise",
-            #                  "6": "neutral"}
-            #     type_text = type_dict[str(kaotype)]
-            #     cv2.putText(draw,type_text, (int(rectangle[0]), int(rectangle[1])), cv2.FONT_HERSHEY_SIMPLEX, 1,
-            #                 (0, 255, 0))
             cv2.rectangle(draw, (int(rectangle[0]), int(rectangle[1])), (int(rectangle[2]), int(rectangle[3])), (255, 0, 0), 1)
 
             # for i in range(5, 15, 2):
