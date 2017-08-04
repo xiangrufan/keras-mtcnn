@@ -100,11 +100,12 @@ def detectFace(img, threshold):
 
 
 threshold = [0.6,0.6,0.7]
-video_path = 'WalmartArguments_p1.mkv'
-cap = cv2.VideoCapture(video_path)
-while (cap.isOpened()):
-    ret, img = cap.read()
+# video_path = 'WalmartArguments_p1.mkv'
+# cap = cv2.VideoCapture(video_path)
 
+while (True):
+    # ret, img = cap.read()
+    img = cv2.imread('000001.png')
 
     rectangles = detectFace(img, threshold)
     draw = img.copy()
@@ -123,8 +124,8 @@ while (cap.isOpened()):
                 continue
             cv2.rectangle(draw, (int(rectangle[0]), int(rectangle[1])), (int(rectangle[2]), int(rectangle[3])), (255, 0, 0), 1)
 
-            # for i in range(5, 15, 2):
-            #     cv2.circle(draw, (int(rectangle[i + 0]), int(rectangle[i + 1])), 2, (0, 255, 0))
+            for i in range(5, 15, 2):
+                cv2.circle(draw, (int(rectangle[i + 0]), int(rectangle[i + 1])), 2, (0, 255, 0))
     cv2.imshow("test", draw)
     c = cv2.waitKey(1) & 0xFF
     if c == 27 or c == ord('q'):
