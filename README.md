@@ -10,6 +10,8 @@ github.com/CongWeilin/mtcnn-caffe
 However, the scripted is modified to reduce hard-disk usage. i.e. all intermediate cropped imgs are stored in memory.
 Requires at least 16 Gb memory to precess training data.
 
-The refined training uses traeining stategy that closely follows the original caffe code. i.e. randomly select Classification loss, roi regression loss or key point regression losses and minimizeor it for each batch of data
+# refined training process
+The refined training uses training strategy that closely follows the original caffe code. i.e. randomly select Classification loss, roi regression loss or key point regression losses and minimize it for each batch of data. Slightly improve the performance. But also makes the training code unnecessarrily complex. 
+Accuracy measurement is not implemented.
 
 
